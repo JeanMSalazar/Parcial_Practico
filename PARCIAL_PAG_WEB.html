@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PARCIAL - PRACTICO</title>
+    </head>
+
+
+    <body>
+
+    <h1>Curriculum vitae</h1>
+    <h2>Expeciencia Laboral</h2>
+
+        <ol id="dynamic-list"></ol>
+
+        <button onclick="addItem()">add item</button>
+        <input type="text" id="introField"/>
+        <br>
+        <button onclick="removeItem()">remove item</button>
+        <button onclick="SelectAll()">Check All</button>
+
+    <h2>Formacion</h2>
+
+        <ol id="dynamic-form"></ol>
+        <button onclick="addItemForm()">add item</button>
+        <input type="text" id="introForm"/>
+        <br>
+        <button onclick="removeItemForm()">remove item</button>
+        <button onclick="SelectAllForm()">CheckAll</button>
+
+
+    <h2>Idiomas</h2>
+
+        <ol id="dynamic-len"></ol>
+        <button onclick="addItemLen()">add item</button>
+        <input type="text" id="introLen"/>
+        <br>
+        <button onclick="removeItemLen()">remove item</button>
+        <button onclick="SelectAllLen()">Check All</button>
+
+    <h2>Aptitudes - Habilidades</h2>
+
+        <ol id="dynamic-hab"></ol>
+        <button onclick="addItemHab()">add item</button>
+        <input type="text" id="introHab"/>
+        <br>
+        <button onclick="removeItemHab()">remove item</button>
+        <button onclick="SelectAllHab()">Check All</button>
+
+        <br><br>
+        <button onclick="send()">send</button>
+
+
+    <script>
+
+    var ul = document.getElementById("dynamic-list");
+    var userEntry = document.getElementById("introField");
+
+    function addItem(){
+
+        var li = document.createElement("li");
+        var check = document.createElement("input");
+        check.type = "checkbox";
+        var items = document.querySelectorAll('#dynamic-list li');
+        ul.appendChild(li);
+        li.appendChild(check);
+
+    for (i = 0; i < items.length; i++) {
+        li.setAttribute('id','box'+[i]);
+        li.setAttribute('class','item');
+        check.setAttribute('class','chk');
+        }
+        li.appendChild(document.createTextNode(userEntry.value));
+    }
+
+function SelectAll(){
+    var items = document.querySelectorAll('#dynamic-list li');
+    var box = document.getElementsByClassName('chk');
+
+    for(i = 0; i < items.length; i++) {
+      if (box[i].checked==false){
+        box[i].checked = true;
+      }
+    }
+}
+
+function removeItem(){
+    var items = document.querySelectorAll('#dynamic-list li');
+    var box = document.getElementsByClassName('chk');
+
+    for(i = 0; i < items.length; i++) {
+      if (box[i].checked==true){
+        items[i].parentNode.removeChild(items[i]);
+      }
+    }
+}
+
+
+      var ulForm = document.getElementById("dynamic-form");
+      var userEntryForm = document.getElementById("introForm");
+
+ function addItemForm(){
+
+        var li = document.createElement("li");
+        var checkForm = document.createElement("input");
+        checkForm.type = "checkbox";
+        var itemsForm = document.querySelectorAll('#dynamic-form li');
+        ulForm.appendChild(li);
+        li.appendChild(checkForm);
+
+    for (i = 0; i < itemsForm.length; i++) {
+        li.setAttribute('id','box'+[i]);
+        li.setAttribute('class','item');
+        checkForm.setAttribute('class','chk');
+        }
+        li.appendChild(document.createTextNode(userEntryForm.value));
+    }
+
+function SelectAllForm(){
+    var itemsForm = document.querySelectorAll('#dynamic-form li');
+    var boxForm = document.getElementsByClassName('chk');
+
+    for(i = 0; i < itemsForm.length; i++) {
+      if (boxForm[i].checked==false){
+        boxForm[i].checked = true;
+      }
+    }
+}
+
+function removeItemForm(){
+    var itemsForm = document.querySelectorAll('#dynamic-form li');
+    var boxForm = document.getElementsByClassName('chk');
+
+    for(i = 0; i < itemsForm.length; i++) {
+      if (boxForm[i].checked==true){
+        itemsForm[i].parentNode.removeChild(itemsForm[i]);
+      }
+    }
+}
+
+    var ulLen = document.getElementById("dynamic-len");
+    var userEntryLen = document.getElementById("introLen");
+
+    function addItemLen(){
+
+        var li = document.createElement("li");
+        var check = document.createElement("input");
+        check.type = "checkbox";
+        var items = document.querySelectorAll('#dynamic-len li');
+        ulLen.appendChild(li);
+        li.appendChild(check);
+
+    for (i = 0; i < items.length; i++) {
+        li.setAttribute('id','box'+[i]);
+        li.setAttribute('class','item');
+        check.setAttribute('class','chk');
+        }
+        li.appendChild(document.createTextNode(userEntryLen.value));
+    }
+
+function SelectAllLen(){
+    var itemsLen = document.querySelectorAll('#dynamic-len li');
+    var boxLen = document.getElementsByClassName('chk');
+
+    for(i = 0; i < itemsLen.length; i++) {
+      if (boxLen[i].checked==false){
+        boxLen[i].checked = true;
+      }
+    }
+}
+
+function removeItemLen(){
+    var itemsLen = document.querySelectorAll('#dynamic-len li');
+    var boxLen = document.getElementsByClassName('chk');
+
+    for(i = 0; i < itemsLen.length; i++) {
+      if (boxLen[i].checked==true){
+        itemsLen[i].parentNode.removeChild(itemsLen[i]);
+      }
+    }
+}
+
+
+    var ulHab = document.getElementById("dynamic-hab");
+    var userEntryHab = document.getElementById("introHab");
+
+    function addItemHab(){
+
+        var li = document.createElement("li");
+        var check = document.createElement("input");
+        check.type = "checkbox";
+        var itemsHab = document.querySelectorAll('#dynamic-hab li');
+        ulHab.appendChild(li);
+        li.appendChild(check);
+
+    for (i = 0; i < itemsHab.length; i++) {
+        li.setAttribute('id','box'+[i]);
+        li.setAttribute('class','item');
+        check.setAttribute('class','chk');
+        }
+        li.appendChild(document.createTextNode(userEntryHab.value));
+    }
+
+function SelectAllHab(){
+    var itemsHab = document.querySelectorAll('#dynamic-hab li');
+    var boxHab = document.getElementsByClassName('chk');
+
+    for(i = 0; i < itemsHab.length; i++) {
+      if (boxHab[i].checked==false){
+        boxHab[i].checked = true;
+      }
+    }
+}
+
+function removeItemHab(){
+    var itemsHab = document.querySelectorAll('#dynamic-hab li');
+    var boxHab = document.getElementsByClassName('chk');
+
+    for(i = 0; i < itemsHab.length; i++) {
+      if (boxHab[i].checked==true){
+        itemsHab[i].parentNode.removeChild(itemsHab[i]);
+      }
+    }
+}
+
+function send(){
+
+    var introFi = document.getElementById("introField").value;
+    var introFo = document.getElementById("introForm").value;
+    var introLe = document.getElementById("introLen").value;
+    var introHa = document.getElementById("introHab").value;
+
+    if(introFi=="" || introFo=="" || introLe=="" || introHa==""){
+        alert("Rellenar todos los espacios");
+    }
+
+    else{
+        alert("formulario enviado");
+    }
+}
+
+    </script>
+    </body>
+    </html>
