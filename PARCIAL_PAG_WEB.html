@@ -69,7 +69,7 @@
 
     for (i = 0; i < items.length; i++) {
         li.setAttribute('id','box'+[i]);
-        li.setAttribute('class','item');
+        li.setAttribute('class','items');
         check.setAttribute('class','chk');
         }
         li.appendChild(document.createTextNode(userEntry.value));
@@ -111,16 +111,16 @@ function removeItem(){
         li.appendChild(checkForm);
 
     for (i = 0; i < itemsForm.length; i++) {
-        li.setAttribute('id','box'+[i]);
-        li.setAttribute('class','item');
-        checkForm.setAttribute('class','chk');
+        li.setAttribute('id','boxForm'+[i]);
+        li.setAttribute('class','itemsForm');
+        checkForm.setAttribute('class','chkForm');
         }
         li.appendChild(document.createTextNode(userEntryForm.value));
     }
 
 function SelectAllForm(){
     var itemsForm = document.querySelectorAll('#dynamic-form li');
-    var boxForm = document.getElementsByClassName('chk');
+    var boxForm = document.getElementsByClassName('chkForm');
 
     for(i = 0; i < itemsForm.length; i++) {
       if (boxForm[i].checked==false){
@@ -131,7 +131,7 @@ function SelectAllForm(){
 
 function removeItemForm(){
     var itemsForm = document.querySelectorAll('#dynamic-form li');
-    var boxForm = document.getElementsByClassName('chk');
+    var boxForm = document.getElementsByClassName('chkForm');
 
     for(i = 0; i < itemsForm.length; i++) {
       if (boxForm[i].checked==true){
@@ -148,21 +148,21 @@ function removeItemForm(){
         var li = document.createElement("li");
         var check = document.createElement("input");
         check.type = "checkbox";
-        var items = document.querySelectorAll('#dynamic-len li');
+        var itemsLen = document.querySelectorAll('#dynamic-len li');
         ulLen.appendChild(li);
         li.appendChild(check);
 
-    for (i = 0; i < items.length; i++) {
-        li.setAttribute('id','box'+[i]);
-        li.setAttribute('class','item');
-        check.setAttribute('class','chk');
+    for (i = 0; i < itemsLen.length; i++) {
+        li.setAttribute('id','boxLen'+[i]);
+        li.setAttribute('class','itemsLen');
+        check.setAttribute('class','chkLen');
         }
         li.appendChild(document.createTextNode(userEntryLen.value));
     }
 
 function SelectAllLen(){
     var itemsLen = document.querySelectorAll('#dynamic-len li');
-    var boxLen = document.getElementsByClassName('chk');
+    var boxLen = document.getElementsByClassName('chkLen');
 
     for(i = 0; i < itemsLen.length; i++) {
       if (boxLen[i].checked==false){
@@ -173,9 +173,9 @@ function SelectAllLen(){
 
 function removeItemLen(){
     var itemsLen = document.querySelectorAll('#dynamic-len li');
-    var boxLen = document.getElementsByClassName('chk');
+    var boxLen = document.getElementsByClassName('chkLen');
 
-    for(i = 0; i < itemsLen.length; i++) {
+    for(i = 0; i < itemsLen.length ; i++) {
       if (boxLen[i].checked==true){
         itemsLen[i].parentNode.removeChild(itemsLen[i]);
       }
@@ -196,16 +196,16 @@ function removeItemLen(){
         li.appendChild(check);
 
     for (i = 0; i < itemsHab.length; i++) {
-        li.setAttribute('id','box'+[i]);
-        li.setAttribute('class','item');
-        check.setAttribute('class','chk');
+        li.setAttribute('id','boxHab'+[i]);
+        li.setAttribute('class','itemsHab');
+        check.setAttribute('class','chkHab');
         }
         li.appendChild(document.createTextNode(userEntryHab.value));
     }
 
 function SelectAllHab(){
     var itemsHab = document.querySelectorAll('#dynamic-hab li');
-    var boxHab = document.getElementsByClassName('chk');
+    var boxHab = document.getElementsByClassName('chkHab');
 
     for(i = 0; i < itemsHab.length; i++) {
       if (boxHab[i].checked==false){
@@ -216,7 +216,7 @@ function SelectAllHab(){
 
 function removeItemHab(){
     var itemsHab = document.querySelectorAll('#dynamic-hab li');
-    var boxHab = document.getElementsByClassName('chk');
+    var boxHab = document.getElementsByClassName('chkHab');
 
     for(i = 0; i < itemsHab.length; i++) {
       if (boxHab[i].checked==true){
